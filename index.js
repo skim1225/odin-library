@@ -3,10 +3,13 @@ let myLibrary = [];
 window.addEventListener("load", init);
 
 function init() {
-    displayBook();
     id('add-btn').addEventListener('click', addBookToLibrary);
-    qsa('.remove-btn').addEventListener('click', removeBook);
-    qsa('.read-btn').addEventListener('click', toggleRead);
+    qsa('.remove-btn').forEach(e => {
+        e.addEventListener('click', removeBook);
+    });
+    qsa('.read-btn').forEach(e => {
+        e.addEventListener('click', toggleRead);
+    });
 }
 
 function Book(author, title, pages, read) {
@@ -16,15 +19,33 @@ function Book(author, title, pages, read) {
     this.read = read;
 }
 
-function addBookToLibrary() {
-    let book = new Book()
+function addBookToLibrary(e) {
+    
+
+
+    
     myLibrary.push(book);
 }
 
 function displayBooks() {
-    for (book in myLibrary) {
+    myLibrary.forEach(n => {
+        let book = gen('div');
+        book.classList.add('book');
+        let title = gen('h2');
+        title.textContent = n.title;
+        book.appendChild(title);
+        let author = gen('p');
+        author.textContent = n.author;
+        book.appendChild(author);
+        let pages = gen('p');
+        pages.textContent = n.pages + " pages";
+        book.appendChild(pages);
+        let read = gen('p');
+        read.textContent = n.read;
+        book.appendChild(read);
+        qs('main').appendChild(book);
+    });
 
-    }
 }
 
 function removeBook() {
@@ -32,7 +53,7 @@ function removeBook() {
 }
 
 function toggleRead() {
-    
+
 }
 
 function qs(selector) {

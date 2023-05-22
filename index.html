@@ -12,11 +12,11 @@
         <h1>Add a Book</h1>
         <form>
             <label for="name">Book name:</label><br>
-            <input type="text" id="name" name="name"><br>
+            <input type="text" id="name" name="name" required><br>
             <label for="author">Author:</label><br>
-            <input type="text" id="author" name="author"><br>
+            <input type="text" id="author" name="author" required><br>
             <label for="pages">Number of pages:</label><br>
-            <input type="number" id="pages" name="pages"><br>
+            <input type="number" id="pages" name="pages" min="0" required><br>
             <input type="radio" id="yes-read" name="read" value="Have read">
             <label for="read">Read</label><br>
             <input type="radio" id="not-read" name="read" value="Haven't read">
@@ -30,6 +30,8 @@
                 <p class="author">J. R. R. Tolkien</p>
                 <p class="pages">1000 pages</p>
                 <p class="read">Has not been read</p>
+                <button class="remove-btn">Remove</button>
+                <button class="read-btn">Toggle Read</button>
             </div>
 
         </main>
