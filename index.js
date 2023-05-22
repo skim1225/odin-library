@@ -12,22 +12,25 @@ function init() {
     });
 }
 
-function Book(author, title, pages, read) {
-    this.author = author;
+function Book(title, author, pages, read) {
     this.title = title;
+    this.author = author;
     this.pages = pages;
     this.read = read;
 }
 
-function addBookToLibrary(e) {
-    
-
-
-    
+function addBookToLibrary() {
+    let title = qs('#title').value;
+    let author = qs('#author').value;
+    let pages = qs('#pages').value;
+    let read = qs('input[name=read]:checked').value;
+    let book = new Book(title, author, pages, read);
     myLibrary.push(book);
+    displayBooks();
 }
 
 function displayBooks() {
+    qs('main').innerText = '';
     myLibrary.forEach(n => {
         let book = gen('div');
         book.classList.add('book');
@@ -48,11 +51,12 @@ function displayBooks() {
 
 }
 
-function removeBook() {
+function removeBook(e) {
+    myLibrary.splice()
 
 }
 
-function toggleRead() {
+function toggleRead(e) {
 
 }
 
