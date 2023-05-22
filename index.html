@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <script src="index.js"></script>
+        <title>Library</title>
+    </head>
+    <body>
+        <h1>Add a Book</h1>
+        <form>
+            <label for="name">Book name:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="author">Author:</label><br>
+            <input type="text" id="author" name="author"><br>
+            <label for="pages">Number of pages:</label><br>
+            <input type="number" id="pages" name="pages"><br>
+            <input type="radio" id="yes-read" name="read" value="Have read">
+            <label for="read">Read</label><br>
+            <input type="radio" id="not-read" name="read" value="Haven't read">
+            <label for="read">Haven't read</label><br>
+            <button id="add-btn">Add to library</button>
+        </form>
+        <h1>My Library</h1>
+        <main>
+            <div class="book">
+                <h2 class="title">The Hobbit</h2>
+                <p class="author">J. R. R. Tolkien</p>
+                <p class="pages">1000 pages</p>
+                <p class="read">Has not been read</p>
+            </div>
+
+        </main>
+    </body>
+</html>
