@@ -1,5 +1,3 @@
-let myLibrary = [];
-
 window.addEventListener("load", init);
 
 function init() {
@@ -11,6 +9,8 @@ function init() {
         e.addEventListener('click', toggleRead);
     });
 }
+
+let myLibrary = [];
 
 function Book(title, author, pages, read) {
     this.title = title;
