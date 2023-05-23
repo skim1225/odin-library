@@ -53,10 +53,8 @@ function displayBooks() {
         qs('main').appendChild(book);
 
     });
-
 }
 
-// todo: splice book from array
 function removeBook(e) {
     let id = e.target.parentElement.id;
     myLibrary.splice(id, 1);
@@ -65,20 +63,16 @@ function removeBook(e) {
 
 // todo: fix bug that changes button text instead of text
 function toggleRead(e) {
-    let text = e.target.parentElement.children[3];
+    let text = e.target.parentElement.children[3].textContent;
     if (text === 'Have read') {
-        e.target.textContent = "Haven't read";
+        e.target.parentElement.children[3].textContent = "Haven't read";
     } else {
-        e.target.textContent = 'Have read';
+        e.target.parentElement.children[3].textContent = 'Have read';
     }
 }
 
 function qs(selector) {
     return document.querySelector(selector);
-}
-
-function qsa(selector) {
-    return document.querySelectorAll(selector);
 }
 
 function id(id) {
