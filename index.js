@@ -6,11 +6,12 @@ function init() {
 
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, read, index) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
+    this.index = index;
 }
 
 function addBookToLibrary() {
@@ -18,12 +19,11 @@ function addBookToLibrary() {
     let author = qs('#author').value;
     let pages = qs('#pages').value;
     let read = qs('input[name=read]:checked').value;
-    let book = new Book(title, author, pages, read);
+    let book = new Book(title, author, pages, read, myLibrary.length);
     myLibrary.push(book);
     displayBooks();
 }
 
-// todo: add id to book
 function displayBooks() {
     qs('main').innerText = '';
     myLibrary.forEach(n => {

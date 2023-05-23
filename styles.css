@@ -1,4 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap');
+body {
+    font-family: 'Roboto Mono', monospace;
+    padding: 20px;
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
 main div {
+    padding: 15px;
     border: 5px solid brown;
     background-color: beige;
+    height: 400px;
 }
