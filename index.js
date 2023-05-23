@@ -29,6 +29,7 @@ function displayBooks() {
     myLibrary.forEach(n => {
         let book = gen('div');
         book.classList.add('book');
+        book.setAttribute('id', n.index);
         let title = gen('h2');
         title.textContent = n.title;
         book.appendChild(title);
