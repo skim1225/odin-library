@@ -2,12 +2,6 @@ window.addEventListener("load", init);
 
 function init() {
     id('add-btn').addEventListener('click', addBookToLibrary);
-    qsa('.remove-btn').forEach(e => {
-        e.addEventListener('click', removeBook);
-    });
-    qsa('.read-btn').forEach(e => {
-        e.addEventListener('click', toggleRead);
-    });
 }
 
 let myLibrary = [];
@@ -29,6 +23,7 @@ function addBookToLibrary() {
     displayBooks();
 }
 
+// todo: add id to book
 function displayBooks() {
     qs('main').innerText = '';
     myLibrary.forEach(n => {
@@ -46,18 +41,35 @@ function displayBooks() {
         let read = gen('p');
         read.textContent = n.read;
         book.appendChild(read);
+        let readBtn = gen('button');
+        readBtn.addEventListener('click', toggleRead);
+        readBtn.textContent = 'Toggle Read';
+        book.appendChild(readBtn);
+        let delBtn = gen('button');
+        delBtn.addEventListener('click', removeBook);
+        delBtn.textContent = 'Remove Book';
+        book.appendChild(delBtn);
         qs('main').appendChild(book);
+
     });
 
 }
 
+// todo: splice book from array
 function removeBook(e) {
-    myLibrary.splice()
-
+    let id = e.target.parentElement.id;
+    myLibrary.splice(id, 1);
+    displayBooks();
 }
 
+// todo: fix bug that changes button text instead of text
 function toggleRead(e) {
-
+    let text = e.target.parentElement.children[3];
+    if (text === 'Have read') {
+        e.target.textContent = "Haven't read";
+    } else {
+        e.target.textContent = 'Have read';
+    }
 }
 
 function qs(selector) {
