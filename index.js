@@ -61,14 +61,14 @@ function removeBook(e) {
     displayBooks();
 }
 
-// todo: fix bug that changes button text instead of text
 function toggleRead(e) {
     let text = e.target.parentElement.children[3].textContent;
     if (text === 'Have read') {
-        e.target.parentElement.children[3].textContent = "Haven't read";
+        myLibrary[e.target.parentElement.id].read = "Haven't read";
     } else {
-        e.target.parentElement.children[3].textContent = 'Have read';
+        myLibrary[e.target.parentElement.id].read = 'Have read';
     }
+    displayBooks();
 }
 
 function qs(selector) {
